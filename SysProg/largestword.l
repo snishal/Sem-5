@@ -5,7 +5,7 @@
 
 %%
 
-[a-zA-Z]+ { if(yyleng > length){length = yyleng; word = yytext; printf("word: %s \n",yytext);}}
+[a-zA-Z]+ { if(yyleng > length){length = yyleng; word = yytext; }}
 [^a-zA-Z] { }
 
 %%
@@ -14,7 +14,13 @@ int main(){
 
 	yyin = fopen("input.txt", "r");
 	yylex();
-	printf("Length : %d \nLargest Word : %s", length, word);
+	printf("Length : %d \nWord : ", length);
+	for(int i=0; i < length; i++){
+		char c = *word;
+		printf("%c", c);
+		word = word + 1;
+	}
+	printf("\n");
 	return 0;
 
 }
