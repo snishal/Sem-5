@@ -1,3 +1,14 @@
-helo gkjadzxy
-kjashdkjaxy
-lkas bjkasdh
+int main()
+{
+	int a = 10.2;
+	printf("Je");
+	if(a ==2)
+		printf("sdf");
+	//HGelsisdf
+	
+	/*sajhdgf
+	sdf
+	asdgf
+	asdf*/
+	return 0;
+}
