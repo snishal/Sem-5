@@ -1,0 +1,18 @@
+1. int main()
+2. {
+3. 	int a = 10.2;
+4. 	printf("Je");
+5. 	if(a ==2)
+6. 		printf("sdf");
+7. 	//HGelsisdf
+8. 	//gkjsadfg
+9. 	/*jads*//*vbhj*/
+10. 	/*kjsahdskjad
+11. 	jhfdkjs*ad
+12. 	*/
+13. 	/*sajhdgf
+14. 	sdf
+15. 	asdgf
+16. 	asdf*/
+17. 	return 0;
+18. }
