@@ -749,35 +749,74 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 10 "arthimetic_exp.l"
-{ tos++; stack[tos] = *yytext; brace_count++;}
+{ 
+		brace_count++;
+		if(tos != -1){
+				if( stack[tos] == '+' || stack[tos] == '-' || stack[tos] == '*' || stack[tos] == '/'  || stack[tos] == '(' ){
+					stack[++tos] = *yytext;
+				}else{
+					printf("cinvalid\n");
+					exit(0);
+				}
+		}
+		else{
+			stack[++tos] = *yytext;
+		}
+	}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 11 "arthimetic_exp.l"
-{ if((65<=stack[tos] && stack[tos]<=90) || (97<=stack[tos] && stack[tos]<=122)){ printf(yytext);printf("invalid\n"); exit(0); } else{ tos++; stack[tos] = *yytext; } }
+#line 24 "arthimetic_exp.l"
+{
+						valid = 1;
+						if(tos != -1){
+							if( (65<=stack[tos] && stack[tos]<=90) || (97<=stack[tos] && stack[tos]<=122)){
+								printf("cinvalid\n");
+								exit(0);
+							}else{
+								stack[++tos] = *yytext;
+							}
+						}
+						else{
+							stack[++tos] = *yytext;
+						}
+				}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 12 "arthimetic_exp.l"
-{ if((65<=stack[tos] && stack[tos]<=90) || (97<=stack[tos] && stack[tos]<=122) || stack[tos] == '(' ){ tos++; stack[tos] = *yytext; } else{ printf("%d", stack[tos-1]); printf("invalid\n"); exit(0); } }
+#line 38 "arthimetic_exp.l"
+{
+						valid = 0;
+						if(tos != -1){
+							if( (65<=stack[tos] && stack[tos]<=90) || (97<=stack[tos] && stack[tos]<=122)){
+								stack[++tos] = *yytext;
+							}else{
+								printf("oinvalid\n");
+								exit(0);
+							}
+						}
+						else{
+							stack[++tos] = *yytext;
+						}
+				}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 13 "arthimetic_exp.l"
-{ stack[tos] = ' ';  tos--;  brace_count--;}
+#line 52 "arthimetic_exp.l"
+{ while( tos!=-1 ){ stack[tos] = ""; tos--;} brace_count--;}
 	YY_BREAK
 case 5:
 /* rule 5 can match eol */
 YY_RULE_SETUP
-#line 14 "arthimetic_exp.l"
+#line 53 "arthimetic_exp.l"
 {}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 15 "arthimetic_exp.l"
+#line 54 "arthimetic_exp.l"
 ECHO;
 	YY_BREAK
-#line 781 "lex.yy.c"
+#line 820 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1778,7 +1817,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 15 "arthimetic_exp.l"
+#line 54 "arthimetic_exp.l"
 
 
 

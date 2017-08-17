@@ -7,10 +7,49 @@
 
 %%
 
-"(" { tos++; stack[tos] = *yytext; brace_count++;}
-[a-zA-Z] { if((65<=stack[tos] && stack[tos]<=90) || (97<=stack[tos] && stack[tos]<=122)){ printf(yytext);printf("invalid\n"); exit(0); } else{ tos++; stack[tos] = *yytext; } }
-[+-/\*] { if((65<=stack[tos] && stack[tos]<=90) || (97<=stack[tos] && stack[tos]<=122) || stack[tos] == '(' ){ tos++; stack[tos] = *yytext; } else{ printf("%d", stack[tos-1]); printf("invalid\n"); exit(0); } }
-")" { stack[tos] = ' ';  tos--;  brace_count--;}
+"(" { 
+		brace_count++;
+		if(tos != -1){
+				if( stack[tos] == '+' || stack[tos] == '-' || stack[tos] == '*' || stack[tos] == '/'  || stack[tos] == '(' ){
+					stack[++tos] = *yytext;
+				}else{
+					printf("cinvalid\n");
+					exit(0);
+				}
+		}
+		else{
+			stack[++tos] = *yytext;
+		}
+	}
+[a-zA-Z]  {
+						valid = 1;
+						if(tos != -1){
+							if( (65<=stack[tos] && stack[tos]<=90) || (97<=stack[tos] && stack[tos]<=122)){
+								printf("cinvalid\n");
+								exit(0);
+							}else{
+								stack[++tos] = *yytext;
+							}
+						}
+						else{
+							stack[++tos] = *yytext;
+						}
+				}
+[+-/*] {
+						valid = 0;
+						if(tos != -1){
+							if( (65<=stack[tos] && stack[tos]<=90) || (97<=stack[tos] && stack[tos]<=122)){
+								stack[++tos] = *yytext;
+							}else{
+								printf("oinvalid\n");
+								exit(0);
+							}
+						}
+						else{
+							stack[++tos] = *yytext;
+						}
+				}
+")" { while( tos!=-1 ){ stack[tos] = ""; tos--;} brace_count--;}
 .|"\n" {}
 %%
 
