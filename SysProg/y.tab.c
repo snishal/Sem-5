@@ -16,7 +16,7 @@ static const char yysccsid[] = "@(#)yaccpar	1.9 (Berkeley) 02/21/93";
 
 #define YYPURE 0
 
-#line 2 "prog1_yak.y"
+#line 2 "prog3_yak.y"
 	#include<stdio.h>
 	int yylex();
 	void yyerror(char *);
@@ -57,119 +57,54 @@ typedef int YYSTYPE;
 
 extern int YYPARSE_DECL();
 
-#define Id 257
-#define Plus 258
-#define Sub 259
-#define Div 260
-#define Mul 261
 #define YYERRCODE 256
 static const short yylhs[] = {                           -1,
-    0,    0,    1,    1,    1,    1,    1,
+    0,    0,    1,    2,    2,
 };
 static const short yylen[] = {                            2,
-    3,    0,    3,    3,    3,    3,    1,
+    3,    0,    3,    2,    0,
 };
 static const short yydefred[] = {                         2,
-    0,    7,    0,    0,    0,    0,    0,    1,    0,    0,
-    5,    6,
+    0,    0,    0,    0,    0,    1,    4,    3,
 };
 static const short yydgoto[] = {                          1,
-    3,
+    3,    5,
 };
 static const short yysindex[] = {                         0,
- -254,    0,  -10, -254, -254, -254, -254,    0, -259, -259,
-    0,    0,
+  -97,  -96,   -8,  -95,  -94,    0,    0,    0,
 };
 static const short yyrindex[] = {                         0,
-    0,    0,    0,    0,    0,    0,    0,    0,   -6,   -4,
-    0,    0,
+    0,  -93,    0,    0,    0,    0,    0,    0,
 };
 static const short yygindex[] = {                         0,
-    3,
+    0,    0,
 };
-#define YYTABLESIZE 255
-static const short yytable[] = {                          8,
-    6,    7,    2,    3,    0,    4,    9,   10,   11,   12,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    4,    5,    6,
-    7,    3,    3,    4,    4,
+#define YYTABLESIZE 5
+static const short yytable[] = {                          2,
+    4,    6,    7,    8,    5,
 };
-static const short yycheck[] = {                         10,
-  260,  261,  257,   10,   -1,   10,    4,    5,    6,    7,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,  258,  259,  260,
-  261,  258,  259,  258,  259,
+static const short yycheck[] = {                         97,
+   97,   10,   98,   98,   98,
 };
 #define YYFINAL 1
 #ifndef YYDEBUG
 #define YYDEBUG 0
 #endif
-#define YYMAXTOKEN 261
+#define YYMAXTOKEN 98
 #if YYDEBUG
 static const char *yyname[] = {
 
 "end-of-file",0,0,0,0,0,0,0,0,0,"'\\n'",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Id","Plus","Sub","Div",
-"Mul",
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"'a'","'b'",
 };
 static const char *yyrule[] = {
 "$accept : P",
 "P : P E '\\n'",
 "P :",
-"E : E Plus E",
-"E : E Sub E",
-"E : E Div E",
-"E : E Mul E",
-"E : Id",
+"E : 'a' X 'b'",
+"X : 'a' 'b'",
+"X :",
 
 };
 #endif
@@ -207,7 +142,7 @@ typedef struct {
 } YYSTACKDATA;
 /* variables for the parser stack */
 static YYSTACKDATA yystack;
-#line 31 "prog1_yak.y"
+#line 21 "prog3_yak.y"
 int main(){
 
 	yyparse();
@@ -219,7 +154,7 @@ void yyerror(char *c){
 	fprintf(stderr, "Error: %s", c);
 
 }
-#line 222 "y.tab.c"
+#line 157 "y.tab.c"
 
 #if YYDEBUG
 #include <stdio.h>		/* needed for printf */
@@ -426,30 +361,10 @@ yyreduce:
     switch (yyn)
     {
 case 1:
-#line 18 "prog1_yak.y"
-	{ printf("Answer : %d\n", yystack.l_mark[-1]); }
+#line 9 "prog3_yak.y"
+	{ printf("Valid\n"); }
 break;
-case 3:
-#line 22 "prog1_yak.y"
-	{ yyval = yystack.l_mark[-2] + yystack.l_mark[0]; }
-break;
-case 4:
-#line 23 "prog1_yak.y"
-	{ yyval = yystack.l_mark[-2] - yystack.l_mark[0]; }
-break;
-case 5:
-#line 24 "prog1_yak.y"
-	{ yyval = yystack.l_mark[-2] / yystack.l_mark[0]; }
-break;
-case 6:
-#line 25 "prog1_yak.y"
-	{ yyval = yystack.l_mark[-2] * yystack.l_mark[0]; }
-break;
-case 7:
-#line 26 "prog1_yak.y"
-	{ yyval = yystack.l_mark[0]; }
-break;
-#line 452 "y.tab.c"
+#line 367 "y.tab.c"
     }
     yystack.s_mark -= yym;
     yystate = *yystack.s_mark;
