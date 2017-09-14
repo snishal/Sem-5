@@ -16,7 +16,7 @@ static const char yysccsid[] = "@(#)yaccpar	1.9 (Berkeley) 02/21/93";
 
 #define YYPURE 0
 
-#line 2 "prog3_yak.y"
+#line 2 "prog4_yak.y"
 	#include<stdio.h>
 	int yylex();
 	void yyerror(char *);
@@ -57,54 +57,57 @@ typedef int YYSTYPE;
 
 extern int YYPARSE_DECL();
 
+#define Id 257
 #define YYERRCODE 256
 static const short yylhs[] = {                           -1,
-    0,    0,    1,    2,    2,
+    0,    0,    1,
 };
 static const short yylen[] = {                            2,
-    3,    0,    3,    3,    0,
+    3,    0,    2,
 };
 static const short yydefred[] = {                         2,
-    0,    0,    0,    0,    0,    1,    0,    3,    4,
+    0,    0,    0,    3,    1,
 };
 static const short yydgoto[] = {                          1,
-    3,    5,
+    3,
 };
 static const short yysindex[] = {                         0,
-  -97,  -96,   -8,  -96,  -95,    0,  -94,    0,    0,
+ -257,  -97,   -8,    0,    0,
 };
 static const short yyrindex[] = {                         0,
-    0,  -93,    0,  -93,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,
 };
 static const short yygindex[] = {                         0,
-    0,    2,
+    0,
 };
-#define YYTABLESIZE 6
+#define YYTABLESIZE 2
 static const short yytable[] = {                          2,
-    4,    6,    8,    9,    5,    7,
+    4,    5,
 };
-static const short yycheck[] = {                         97,
-   97,   10,   98,   98,   98,    4,
+static const short yycheck[] = {                        257,
+   98,   10,
 };
 #define YYFINAL 1
 #ifndef YYDEBUG
 #define YYDEBUG 0
 #endif
-#define YYMAXTOKEN 98
+#define YYMAXTOKEN 257
 #if YYDEBUG
 static const char *yyname[] = {
 
 "end-of-file",0,0,0,0,0,0,0,0,0,"'\\n'",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"'a'","'b'",
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"'b'",0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Id",
 };
 static const char *yyrule[] = {
 "$accept : P",
 "P : P E '\\n'",
 "P :",
-"E : 'a' X 'b'",
-"X : 'a' X 'b'",
-"X :",
+"E : Id 'b'",
 
 };
 #endif
@@ -142,7 +145,7 @@ typedef struct {
 } YYSTACKDATA;
 /* variables for the parser stack */
 static YYSTACKDATA yystack;
-#line 21 "prog3_yak.y"
+#line 19 "prog4_yak.y"
 int main(){
 
 	yyparse();
@@ -154,7 +157,7 @@ void yyerror(char *c){
 	fprintf(stderr, "Error: %s", c);
 
 }
-#line 157 "y.tab.c"
+#line 160 "y.tab.c"
 
 #if YYDEBUG
 #include <stdio.h>		/* needed for printf */
@@ -361,10 +364,10 @@ yyreduce:
     switch (yyn)
     {
 case 1:
-#line 9 "prog3_yak.y"
+#line 11 "prog4_yak.y"
 	{ printf("Valid\n"); }
 break;
-#line 367 "y.tab.c"
+#line 370 "y.tab.c"
     }
     yystack.s_mark -= yym;
     yystate = *yystack.s_mark;
