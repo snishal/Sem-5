@@ -62,29 +62,29 @@ static const short yylhs[] = {                           -1,
     0,    0,    1,    2,    2,
 };
 static const short yylen[] = {                            2,
-    3,    0,    3,    2,    0,
+    3,    0,    3,    3,    0,
 };
 static const short yydefred[] = {                         2,
-    0,    0,    0,    0,    0,    1,    4,    3,
+    0,    0,    0,    0,    0,    1,    0,    3,    4,
 };
 static const short yydgoto[] = {                          1,
     3,    5,
 };
 static const short yysindex[] = {                         0,
-  -97,  -96,   -8,  -95,  -94,    0,    0,    0,
+  -97,  -96,   -8,  -96,  -95,    0,  -94,    0,    0,
 };
 static const short yyrindex[] = {                         0,
-    0,  -93,    0,    0,    0,    0,    0,    0,
+    0,  -93,    0,  -93,    0,    0,    0,    0,    0,
 };
 static const short yygindex[] = {                         0,
-    0,    0,
+    0,    2,
 };
-#define YYTABLESIZE 5
+#define YYTABLESIZE 6
 static const short yytable[] = {                          2,
-    4,    6,    7,    8,    5,
+    4,    6,    8,    9,    5,    7,
 };
 static const short yycheck[] = {                         97,
-   97,   10,   98,   98,   98,
+   97,   10,   98,   98,   98,    4,
 };
 #define YYFINAL 1
 #ifndef YYDEBUG
@@ -103,7 +103,7 @@ static const char *yyrule[] = {
 "P : P E '\\n'",
 "P :",
 "E : 'a' X 'b'",
-"X : 'a' 'b'",
+"X : 'a' X 'b'",
 "X :",
 
 };

@@ -13,7 +13,7 @@ P : P E '\n'{ printf("Valid\n"); }
 E :  'a' X 'b'
 	;
 	
-X : 'a''b'
+X : 'a'X'b'
 	| 
 	;
 	
