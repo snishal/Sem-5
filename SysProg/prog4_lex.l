@@ -5,7 +5,8 @@
 
 %%
 
-[a]{10,} { yylval = atoi(yytext); return Id; }
+"aaaaaaaaaa" { yylval = atoi(yytext); return Id; }
+"a" { return *yytext; }
 "b" { return *yytext; }
 "\n" { return *yytext; }
 

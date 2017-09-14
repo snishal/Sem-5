@@ -12,7 +12,15 @@ P : P E '\n'{ printf("Valid\n"); }
 	|
 	; 
 
-E :  Id 'b'
+E :  Y X 'b'
+	;
+	
+Y : Id Y
+	| Id
+	;
+		
+X : 'a' X
+	| 
 	;
 	
 %%
