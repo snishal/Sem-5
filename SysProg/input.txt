@@ -1,1 +1,10 @@
-(a+c+d+s)*(c*c*d)*(d/(g/f)/s/f)+(d+(d+d)*c*c)*(a)+(e-r-t)-(((((y))))-u-g)-(g-g)-g*(j*h*d)*(a*s*z)*((x*c)*b)
+JASASSM START 1000
+STA
+LOOP1 JMP LOOP2
+LDA
+LOOP2 JMP LOOP1
+RESB 04
+LDA
+STA
+JMP LOOP1
+END
